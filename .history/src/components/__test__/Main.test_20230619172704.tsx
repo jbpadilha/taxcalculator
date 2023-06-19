@@ -72,5 +72,7 @@ describe('Main component', () => {
     const totalValue = await screen.findByText('CA$17,739.11');
     await waitFor(() => expect(totalValue).toBeTruthy());
 
-  });  
+  });
+
+  
 });
