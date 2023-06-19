@@ -87,7 +87,9 @@ describe('Main component', () => {
 
     // Mock API response
 
-    jest.spyOn(taxCalculator, 'fetchTaxAsync').mockRejectedValue('Error test');
+    jest.spyOn(taxCalculator, 'fetchTaxAsync').mockRejectedValue(() => {
+        return Promise.reject('Error test');
+    });
 
     // Trigger the calculation
     await fireEvent.click(screen.getByText('Calculate'));
